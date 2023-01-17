@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2273e6ca-1142-4dfb-8ffd-b3f6d1d57e7e">
+	<property name="ireport.zoom" value="1.1000000000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="81"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM ventas;]]>
+	</queryString>
+	<field name="id_ventas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="importe" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="456" y="0" width="99" height="132" uuid="36aae3b5-be3b-4e56-a373-d0540b8d24c9"/>
+				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="bbd25393-99c7-4ddd-8a1b-46a6c076bedb"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="451" height="95" uuid="6d49a76b-0336-4a1e-83cc-de57249fa267"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Nombre Empresa]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="eb940c86-5dd5-4a0d-871f-f6bf68320b1e"/>
+				<staticText>
+					<reportElement x="0" y="0" width="451" height="32" forecolor="#FFFFFF" uuid="639a0456-3d43-4974-bb48-48fa1c36759b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="20"/>
+					</textElement>
+					<text><![CDATA[Enero 2023]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="85" y="36" width="100" height="20" uuid="b77b52c1-106f-4019-a6d2-20dd9c78f634"/>
+				<text><![CDATA[Id. Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="36" width="100" height="20" uuid="f999738a-736d-49fa-b99f-70c09b0e20b4"/>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="391" y="0" width="100" height="20" uuid="c2cd7c3f-a7fc-4079-a250-b27d3285f82c"/>
+				<textFieldExpression><![CDATA[$F{importe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="0" width="100" height="20" uuid="14c53ec7-1e10-4b4e-abc7-38bc59ec43b7"/>
+				<textFieldExpression><![CDATA[$F{id_ventas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="416" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="1134da4b-f009-49ea-843f-a1886ac96a99"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="3" width="100" height="20" uuid="8431bc1b-c871-42de-8fcd-ae01909e2968"/>
+				<text><![CDATA[Ventas totales:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="85" y="4" width="142" height="20" uuid="e57ce7ee-4b60-49f2-9249-2f9bde94d11a"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
