@@ -6,11 +6,13 @@
 package tienda.Main;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import modelos.Informe;
+import net.sf.jasperreports.engine.JRException;
 
 /**
  *
@@ -18,14 +20,17 @@ import javafx.scene.control.Label;
  */
 public class MainController implements Initializable {
     
+    Informe reporte = new Informe("titulo");
+    
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void handleButtonAction(ActionEvent event) throws SQLException, JRException {
         System.out.println("You clicked me!");
+        reporte.generarInforme();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
