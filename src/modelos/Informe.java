@@ -9,34 +9,42 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.HashMap;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-
+import net.sf.jasperreports.view.JasperViewer;
+import java.util.Map;
 /**
  *
  * @author alumno
  */
+
 public class Informe {
    
     private String nombreInforme;
     
 	public Informe(String nombreInforme){
-            this.nombreInforme=nombreInforme;
+            this.nombreInforme="ventas";
     	}
     
 	public void generarInforme() throws SQLException, JRException{
 
-            Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/tienda","alumno", "pass");
+            Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/tienda", "alumno", "pass");    
 
+            Map parametros = new HashMap();
+                    
             InputStream dir = getClass().getResourceAsStream(this.nombreInforme +".jrxml");
 
             JasperReport jasperReport = JasperCompileManager.compileReport(dir);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conexion);
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "./reporte.pdf");
+            
+            // Visualizando el Reporte
+            JasperViewer viewer = new JasperViewer(jasperPrint);
+            
+            viewer.setVisible(true);
             //------- INTRODUCIR LÍNEA PARA GENERAR PDF EN UBICACIÓN INDICADA ---------------
                 
 	}

@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Tienda.jar" size="63524" download="eager" />
+    <jar href="Tienda.jar" size="179705" download="eager" />
     <jar href="lib/barbecue-1.5-beta1.jar" size="91079" download="eager" />
     <jar href="lib/batik-anim.jar" size="95479" download="eager" />
     <jar href="lib/batik-awt-util.jar" size="403287" download="eager" />
@@ -38,7 +38,8 @@
     <jar href="lib/jcommon-1.0.15.jar" size="309294" download="eager" />
     <jar href="lib/jfreechart-1.0.12.jar" size="1368681" download="eager" />
     <jar href="lib/jpa.jar" size="48045" download="eager" />
-    <jar href="lib/png-encoder-1.5.jar" size="18117" download="eager" />
+    <jar href="lib/mysql-connector-java-8.0.23.jar" size="2415211" download="eager" />
+    <jar href="lib/png-encoder-1.5.jar" size="10266" download="eager" />
     <jar href="lib/poi-3.7.jar" size="1675036" download="eager" />
     <jar href="lib/xalan.jar" size="1781922" download="eager" />
     <jar href="lib/xml-apis-ext.jar" size="85686" download="eager" />

@@ -28,6 +28,8 @@ public class MainController implements Initializable {
         reporte.generarInforme();
     }
     
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
