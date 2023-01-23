@@ -5,6 +5,7 @@
  */
 package tienda.Main;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -23,12 +24,10 @@ public class MainController implements Initializable {
     Informe reporte = new Informe("titulo");
     
     @FXML
-    private void handleButtonAction(ActionEvent event) throws SQLException, JRException {
+    private void handleButtonAction(ActionEvent event) throws SQLException, JRException, FileNotFoundException {
         System.out.println("You clicked me!");
         reporte.generarInforme();
     }
-    
-    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

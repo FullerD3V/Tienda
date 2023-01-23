@@ -5,6 +5,8 @@
  */
 package modelos;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,29 +25,28 @@ import java.util.Map;
  */
 
 public class Informe {
-   
+
     private String nombreInforme;
-    
+
 	public Informe(String nombreInforme){
             this.nombreInforme="ventas";
     	}
-    
-	public void generarInforme() throws SQLException, JRException{
 
-            Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/tienda", "alumno", "pass");    
+	public void generarInforme() throws SQLException, JRException, FileNotFoundException{
+
+            Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/tienda", "alumno", "pass");
 
             Map parametros = new HashMap();
-                    
-            InputStream dir = getClass().getResourceAsStream(this.nombreInforme +".jrxml");
+
+            InputStream dir = new FileInputStream("src/reporte/ventas.jrxml");
 
             JasperReport jasperReport = JasperCompileManager.compileReport(dir);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conexion);
-            
+
             // Visualizando el Reporte
             JasperViewer viewer = new JasperViewer(jasperPrint);
-            
+
             viewer.setVisible(true);
-            //------- INTRODUCIR LÍNEA PARA GENERAR PDF EN UBICACIÓN INDICADA ---------------
-                
+            //------- INTRODUCIR LÍNEA PARA GENERAR PDF EN UBICACIÓN INDICADA --------------- 
 	}
 }
