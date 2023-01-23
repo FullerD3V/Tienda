@@ -31,10 +31,6 @@
 	</background>
 	<title>
 		<band height="132" splitType="Stretch">
-			<image>
-				<reportElement x="2" y="0" width="118" height="132" uuid="4c1f9d9c-4968-4da4-8e6b-226c873a4947"/>
-				
-			</image>
 			<textField>
 				<reportElement x="120" y="0" width="435" height="103" uuid="26080ceb-dc75-4cd8-a26d-75a105224d1b"/>
 				<textElement>
@@ -49,6 +45,10 @@
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="4" y="0" width="116" height="132" uuid="b3b678be-b0a7-439b-82dc-ef26695462de"/>
+				<imageExpression><![CDATA["/home/alumno/NetBeansProjects/Tienda/src/reporte/knight.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -59,10 +59,6 @@
 	</columnHeader>
 	<detail>
 		<band height="91" splitType="Stretch">
-			<image>
-				<reportElement x="2" y="0" width="56" height="80" uuid="8665d6ef-2201-47a0-9acf-51093af07074"/>
-				
-			</image>
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="2" y="90" width="551" height="1" uuid="a584dad0-a038-49b5-8608-53f116774a7c"/>
 			</line>
