@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Tienda.jar" size="25753" download="eager" />
+    <jar href="Tienda.jar" size="34766" download="eager" />
     <jar href="lib/barbecue-1.5-beta1.jar" size="91079" download="eager" />
     <jar href="lib/batik-anim.jar" size="95479" download="eager" />
     <jar href="lib/batik-awt-util.jar" size="403287" download="eager" />
