@@ -19,6 +19,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import java.util.Map;
+import net.sf.jasperreports.engine.JasperExportManager;
 /**
  *
  * @author alumno
@@ -48,5 +49,6 @@ public class Informe {
 
             viewer.setVisible(true);
             //------- INTRODUCIR LÍNEA PARA GENERAR PDF EN UBICACIÓN INDICADA --------------- 
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "src/reporte/ventas.pdf");
 	}
 }
