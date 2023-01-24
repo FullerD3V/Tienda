@@ -48,7 +48,7 @@ public class Informe {
             JasperViewer viewer = new JasperViewer(jasperPrint);
 
             viewer.setVisible(true);
-            //------- INTRODUCIR LÍNEA PARA GENERAR PDF EN UBICACIÓN INDICADA --------------- 
+            //------- INTRODUCIR LÍNEA PARA GENERAR PDF EN UBICACIÓN INDICADA ---------------
             JasperExportManager.exportReportToPdfFile(jasperPrint, "src/reporte/ventas.pdf");
 	}
 }

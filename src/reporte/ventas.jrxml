@@ -47,7 +47,7 @@
 			</textField>
 			<image>
 				<reportElement x="4" y="0" width="116" height="132" uuid="b3b678be-b0a7-439b-82dc-ef26695462de"/>
-				<!--<imageExpression><![CDATA["knight.png"]]></imageExpression>-->
+				<imageExpression><![CDATA["src/reporte/knight.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
