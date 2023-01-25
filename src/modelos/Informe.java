@@ -12,13 +12,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.Map;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
-import java.util.Map;
 import net.sf.jasperreports.engine.JasperExportManager;
 /**
  *
@@ -28,21 +28,25 @@ import net.sf.jasperreports.engine.JasperExportManager;
 public class Informe {
 
     private String nombreInforme;
+    private String paramNombre;
 
-	public Informe(String nombreInforme){
-            this.nombreInforme="ventas";
+	public Informe(String nombreInforme, String paramNombre){
+            this.nombreInforme=nombreInforme;
+            this.paramNombre=paramNombre;
     	}
-
+        
 	public void generarInforme() throws SQLException, JRException, FileNotFoundException{
 
             Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/tienda", "alumno", "pass");
 
-            Map parametros = new HashMap();
+            Map<String, Object> parametros = new HashMap<>();
+            
+            parametros.put("TITLE", paramNombre);
 
-            InputStream dir = new FileInputStream("src/reporte/ventas.jrxml");
+            InputStream dir = new FileInputStream("src/reporte/"+ nombreInforme +".jrxml");
 
             JasperReport jasperReport = JasperCompileManager.compileReport(dir);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conexion);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conexion);
 
             // Visualizando el Reporte
             JasperViewer viewer = new JasperViewer(jasperPrint);

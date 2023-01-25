@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="tienda.Main.MainController">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tienda.Main.MainController">
     <children>
-        <Button fx:id="button" layoutX="126" layoutY="90" onAction="#handleButtonAction" text="Click Me!" />
+        <Button fx:id="button" layoutX="121.0" layoutY="142.0" onAction="#handleButtonAction" text="Click Me!" />
+      <Label layoutX="83.0" layoutY="56.0" text="Nombre de la empresa:" />
+      <TextField fx:id="txtNombre" layoutX="93.0" layoutY="81.0" onKeyReleased="#txtNombreOnKeyReleased" prefHeight="26.0" prefWidth="135.0" />
     </children>
 </AnchorPane>
